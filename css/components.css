@@ -85,3 +85,12 @@
 .copy-btn:hover {
   background: var(--color-accent-hover);
 }
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+#hero {
+  max-height: 90vh;
+  overflow: hidden;
+}

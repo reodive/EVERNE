@@ -7,3 +7,4 @@
 @import url('forms.css');             /* ← 追加 */
 @import url('effects.css');
 @import url('responsive.css');
+@import url('preloader.css');

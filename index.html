@@ -11,24 +11,6 @@
   <link rel="stylesheet" href="css/main.css" />
 
   <!-- プレローダー時にスクロール禁止 -->
-  <style>
-    body.preloading {
-      overflow: hidden;
-    }
-
-    #preloader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-    }
-  </style>
 </head>
 <body class="preloading">
   <!-- Preloader -->
@@ -43,21 +25,6 @@
       <path d="M256 149.33A106.67 106.67 0 1 0 362.67 256 106.78 106.78 0 0 0 256 149.33zm0 170.67A64 64 0 1 1 320 256a64.07 64.07 0 0 1-64 64zM393.6 137.6a25.6 25.6 0 1 0 25.6 25.6 25.6 25.6 0 0 0-25.6-25.6z"/>
     </svg>
   </a>
-
-    <style>
-    body.loading {
-      overflow: hidden;
-    }
-  </style>
-
-  <script>
-    document.body.classList.add('loading');
-    window.addEventListener('load', () => {
-      document.body.classList.remove('loading'); // スクロール解禁
-      const preloader = document.getElementById('preloader');
-      if (preloader) preloader.style.display = 'none';
-    });
-  </script>
 
   <!-- Header -->
   <header role="banner">
@@ -221,6 +188,7 @@
   </footer>
 
   <!-- JavaScript -->
-  <script src="script.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/preloader.js" defer></script>
 </body>
 </html>

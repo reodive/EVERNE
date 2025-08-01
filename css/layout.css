@@ -59,3 +59,15 @@ nav a.active::after {
 }
 .hero-content h2 {
   font-family: var(--font-head);
+}
+.menu-toggle {
+  display: none; /* デフォルトでは非表示に */
+}
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  nav ul {
+    display: none;
+  }
+}

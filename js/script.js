@@ -119,25 +119,6 @@ function revealSections() {
 // 初回＋スクロール時
 window.addEventListener('scroll', revealSections);
 
-// -----------------------------
-// Preloader フェードアウト
-// -----------------------------
-document.addEventListener('DOMContentLoaded', () => {
-  const preloader = document.getElementById('preloader');
-  if (preloader) {
-    setTimeout(() => {
-      preloader.style.opacity = '0';
-      setTimeout(() => preloader.style.display = 'none', 500); // CSS transitionと合わせる
-    }, 2000); // 表示時間：2秒
-  }
-});
-window.addEventListener('load', () => {
-  document.body.classList.add('loaded');
-});
-setTimeout(() => {
-  preloader.classList.add('hide'); // CSSで opacity + visibility
-}, 1500);
-
 const slides = document.querySelector('.slides');
 const slideItems = document.querySelectorAll('.slide');
 const dots = document.querySelector('.dots');
@@ -193,14 +174,12 @@ prevBtn.addEventListener('click', prevSlide);
 
 // 自動スライド
 setInterval(nextSlide, 5000); // 5秒ごと
-window.addEventListener("load", () => {
-  const preloader = document.getElementById("preloader");
+window.addEventListener('load', () => {
+  const preloader = document.getElementById('preloader');
   if (preloader) {
     setTimeout(() => {
-      preloader.classList.add("hide");
-
-      // プレローダーが完全に消えた後にスクロール許可
-      document.body.classList.remove("preloading");
-    }, 1500); // プレローダーの表示時間と合わせる
+      preloader.classList.add('hide');
+      document.body.classList.remove('preloading');
+    }, 1500);
   }
 });
