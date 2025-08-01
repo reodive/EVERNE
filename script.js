@@ -7,25 +7,6 @@ document.getElementById('menu-toggle').addEventListener('click', function() {
 });
 
 // -----------------------------
-// ポートフォリオフィルター
-// -----------------------------
-document.querySelectorAll('.filter-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-
-    const filter = btn.getAttribute('data-filter');
-    document.querySelectorAll('.gallery-item').forEach(item => {
-      if (filter === 'all' || item.getAttribute('data-category') === filter) {
-        item.style.display = 'block';
-      } else {
-        item.style.display = 'none';
-      }
-    });
-  });
-});
-
-// -----------------------------
 // フォームバリデーション
 // -----------------------------
 document.getElementById('contact-form').addEventListener('submit', function(e) {
@@ -136,13 +117,12 @@ function revealSections() {
 }
 
 // 初回＋スクロール時
-window.addEventListener('load', revealSections);
 window.addEventListener('scroll', revealSections);
 
 // -----------------------------
 // Preloader フェードアウト
 // -----------------------------
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
   const preloader = document.getElementById('preloader');
   if (preloader) {
     setTimeout(() => {
@@ -151,6 +131,12 @@ window.addEventListener('load', () => {
     }, 2000); // 表示時間：2秒
   }
 });
+window.addEventListener('load', () => {
+  document.body.classList.add('loaded');
+});
+setTimeout(() => {
+  preloader.classList.add('hide'); // CSSで opacity + visibility
+}, 1500);
 
 const slides = document.querySelector('.slides');
 const slideItems = document.querySelectorAll('.slide');
@@ -180,6 +166,20 @@ function nextSlide() {
   let nextIndex = (currentIndex + 1) % slideItems.length;
   goToSlide(nextIndex);
 }
+const filterButtons = document.querySelectorAll('.filter-btn');
+const galleryItems = document.querySelectorAll('.gallery-item');
+
+filterButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterButtons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const filter = btn.getAttribute('data-filter');
+    galleryItems.forEach(item => {
+      item.style.display = (filter === 'all' || item.dataset.category === filter) ? 'block' : 'none';
+    });
+  });
+});
 
 // 前のスライド
 function prevSlide() {
@@ -193,3 +193,14 @@ prevBtn.addEventListener('click', prevSlide);
 
 // 自動スライド
 setInterval(nextSlide, 5000); // 5秒ごと
+window.addEventListener("load", () => {
+  const preloader = document.getElementById("preloader");
+  if (preloader) {
+    setTimeout(() => {
+      preloader.classList.add("hide");
+
+      // プレローダーが完全に消えた後にスクロール許可
+      document.body.classList.remove("preloading");
+    }, 1500); // プレローダーの表示時間と合わせる
+  }
+});

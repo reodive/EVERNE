@@ -1,0 +1,21 @@
+:root {
+  --color-bg: #ffffff;
+  --color-text: #4e4e4e;
+  --color-accent: #efdbdb;
+  --color-accent-hover: #424040;
+  --color-brand: #747474;
+  --color-overlay: rgba(203, 203, 203, 0.3);
+  --font-logo: 'Yeseva One', serif;
+  --font-head: 'DM Serif Display', serif;
+  --font-subhead: 'Montserrat', sans-serif;
+  --font-body: 'Source Serif 4', serif;
+  --max-width: 1200px;
+  --container-pad: 20px;
+  --h1-size: 3em;
+  --h2-size: 1.75em;
+  --h3-size: 1.25em;
+  --body-size: 1em;
+  --line-height: 1.6;
+  --transition: 0.4s ease;
+  --fade-duration: 0.8s;
+}

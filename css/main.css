@@ -1,0 +1,9 @@
+@import url('variables.css');
+@import url('reset.css');
+@import url('base.css');
+@import url('layout.css');
+@import url('components.css');
+@import url('sections.css');
+@import url('forms.css');             /* ← 追加 */
+@import url('effects.css');
+@import url('responsive.css');

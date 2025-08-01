@@ -1,0 +1,28 @@
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 1em;
+    margin-top: 1em;
+  }
+
+  .slide-btn {
+    display: none;
+  }
+
+  .contact-card {
+    position: fixed;
+    top: 10vh;
+    right: 5%;
+    width: 90%;
+    max-height: 80vh;
+  }
+
+  .hero-content h2 {
+    font-size: 1.4em;
+  }
+}

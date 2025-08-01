@@ -1,0 +1,24 @@
+/* === Container === */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+}
+
+/* === Link & Buttons === */
+a {
+  color: var(--color-brand);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+a:hover,
+a:focus {
+  color: var(--color-accent-hover);
+}
+
+button,
+.btn {
+  cursor: pointer;
+  font-family: var(--font-subhead);
+  transition: background var(--transition), transform var(--transition);
+}

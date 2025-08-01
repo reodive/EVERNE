@@ -1,0 +1,21 @@
+body.preloading {
+  overflow: hidden;
+  height: 100vh;
+}
+
+#preloader {
+  position: fixed;
+  inset: 0;
+  background-color: #f9d3e0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s ease;
+  opacity: 1;
+}
+
+#preloader.hide {
+  opacity: 0;
+  visibility: hidden;
+}

@@ -1,0 +1,87 @@
+/* === Instagram Button === */
+.instagram-btn {
+  position: fixed;
+  top: 30vh;
+  left: 1em;
+  width: 3em;
+  height: 3em;
+  background: var(--color-bg);
+  border: 1px solid var(--color-text);
+  border-radius: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text);
+  z-index: 20;
+}
+.instagram-btn:hover {
+  border-color: var(--color-accent-hover);
+  color: var(--color-accent-hover);
+}
+
+/* === Slide Buttons === */
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  background: none;
+  border: 1px solid var(--color-text);
+  color: var(--color-text);
+  font-size: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+.slide-btn:hover {
+  background: var(--color-accent-hover);
+  color: #fff;
+  border-color: var(--color-accent-hover);
+}
+#prev { left: 1em; }
+#next { right: 1em; }
+
+/* === Contact Card === */
+.contact-card {
+  position: absolute;
+  top: 3em;
+  right: 0;
+  width: 520px;
+  max-width: 90%;
+  max-height: 70vh;
+  padding: 2em;
+  background: var(--color-bg);
+  border-radius: 0.75em;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  display: none;
+  overflow-y: auto;
+  z-index: 15;
+}
+.contact-card.show {
+  display: block;
+}
+.close-btn {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  background: none;
+  border: none;
+  font-size: 1.25em;
+  cursor: pointer;
+}
+.copy-btn {
+  margin-left: auto;
+  background: var(--color-accent);
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  transition: background var(--transition);
+}
+.copy-btn:hover {
+  background: var(--color-accent-hover);
+}
