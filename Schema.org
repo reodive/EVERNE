@@ -1,0 +1,10 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "EVERNE. エバーニ",
+  "url": "https://your-website-domain.com",
+  "logo": "https://your-website-domain.com/logo.png",
+  "description": "EVERNE. エバーニは、キッズからシニアまで幅広くキャスティングするモデル事務所です。"
+}
+</script>

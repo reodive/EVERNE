@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EVERNE. - Model Agency</title>
+  <meta name="description" content="EVERNE.は、モデル、イベントコンパニオン、インフルエンサー、MCなど、多様なキャスティングを行うモデル事務所です。" />
+  <meta name="keywords" content="モデル, キャスティング, イベントコンパニオン, インフルエンサー, MC, エバーニ" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=DM+Serif+Display:ital@0;1&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <img src="image/everne.png" alt="Splash Image" />
+  </div>
+
+  <!-- Instagram Button -->
+  <a href="https://www.instagram.com/yourprofile" class="instagram-btn" target="_blank" rel="noopener" aria-label="Instagram">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="24" height="24" fill="currentColor">
+      <path d="M349.33 69.33H162.67C105.6 69.33 64 110.93 64 168v180.27c0 57.07 41.6 98.67 98.67 98.67h186.67c57.07 0 98.66-41.6 98.66-98.67V168c0-57.07-41.6-98.67-98.67-98.67zm64 278.94c0 35.2-28.53 63.73-63.73 63.73H162.67c-35.2 0-63.73-28.53-63.73-63.73V168c0-35.2 28.53-63.73 63.73-63.73h186.67c35.2 0 63.73 28.53 63.73 63.73v180.27z"/>
+      <path d="M256 149.33A106.67 106.67 0 1 0 362.67 256 106.78 106.78 0 0 0 256 149.33zm0 170.67A64 64 0 1 1 320 256a64.07 64.07 0 0 1-64 64zM393.6 137.6a25.6 25.6 0 1 0 25.6 25.6 25.6 25.6 0 0 0-25.6-25.6z"/>
+    </svg>
+  </a>
+
+  <!-- Header -->
+  <header role="banner">
+    <div class="container header-container">
+      <h1 class="logo">EVERNE.</h1>
+      <button id="menu-toggle" aria-label="Open Menu">Menu</button>
+      <nav id="navbar" role="navigation" aria-label="Main Navigation">
+        <ul>
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Showcase Slider -->
+    <section id="showcase">
+      <div class="showcase-wrapper">
+        <div class="slides">
+          <div class="slide" data-label="MODEL">
+          <img src="image/models/model0.png" alt="Model 0" /> 
+          </div>
+          <div class="slide" data-label="ACTOR">
+            <img src="image/models/model.png" alt="Model" />
+          </div>
+          <div class="slide" data-label="MODEL">
+            <img src="image/models/model1.png" alt="Model 1" />
+          </div>
+          <div class="slide" data-label="SPECIALIST">
+            <img src="image/models/model2.png" alt="Model 2" />
+          </div>
+          <div class="slide" data-label="ACTOR">
+            <img src="image/models/model3.png" alt="Model 3" />
+          </div>
+          <div class="slide" data-label="MODEL">
+            <img src="image/models/model4.png" alt="Model 4" /> 
+          </div>
+          <div class="slide" data-label="MODEL">
+            <img src="image/models/model5.png" alt="Model 5" /> 
+          </div>
+          <!-- 他のスライドも同様に追加 -->
+        </div>
+        <div class="dots"></div>
+      <!-- Showcase内に追加 -->
+        <button id="prev" class="slide-btn" aria-label="Previous Slide">&#10094;</button>
+        <button id="next" class="slide-btn" aria-label="Next Slide">&#10095;</button>
+      </div>
+    </section>
+
+    <section id="catchcopy">
+      <div class="container catchcopy-box">
+        <h2>Discover Your Unique Charm — キッズからシニアまで、幅広くキャスティングします。</h2>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <div class="container content-box">
+        <h2>About</h2>
+        <p>EVERNE. Casting & Promotion</p>
+        <div class="profile">
+          <img src="image/emi-suzuki.png" alt="Emi Suzuki" loading="lazy" />
+          <div class="profile-text">
+            <h3>Emi Suzuki</h3>
+            <p>代表：鈴木 江美</p>
+          </div>
+        </div>
+        <!-- Contact Button & Card -->
+        <button id="contact-info-btn" class="btn">Contact</button>
+        <div id="contact-card" class="contact-card">
+          <button class="close-btn" aria-label="閉じる">&times;</button>
+          <div class="contact-item">
+            <strong>Phone:</strong>
+            <span id="phone-number">090-1234-5678</span>
+            <button class="copy-btn" data-copy-target="phone-number">Copy</button>
+          </div>
+          <div class="contact-item">
+            <strong>Email:</strong>
+            <span id="email-address">info@everne.co.jp</span>
+            <button class="copy-btn" data-copy-target="email-address">Copy</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+      <div class="container content-box">
+        <h2>Services</h2>
+        <ul class="services-list">
+          <li>Modeling</li>
+          <li>Event Companion</li>
+          <li>Influencer</li>
+          <li>MC / Hosting</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+      <div class="container content-box">
+        <h2>Achievements</h2>
+        <div class="portfolio-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="model">Model</button>
+          <button class="filter-btn" data-filter="companion">Event Companion</button>
+          <button class="filter-btn" data-filter="influencer">Influencer</button>
+          <button class="filter-btn" data-filter="mc">MC / Hosting</button>
+        </div>
+        <div class="gallery">
+          <div class="gallery-item" data-category="model">
+            <img src="image/model1.jpg" alt="Fashion model shoot" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news">
+      <div class="container content-box">
+        <h2>News / Blog</h2>
+        <article class="news-item">
+          <h3>Latest Event Update</h3>
+          <p>Discover our latest events and behind-the-scenes moments.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="container content-box">
+        <h2>Contact</h2>
+        <form id="contact-form" action="send.php" method="post" novalidate>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required />
+          <span class="error-message" id="error-name"></span>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+          <span class="error-message" id="error-email"></span>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+          <span class="error-message" id="error-message"></span>
+
+          <button type="submit" class="btn">Submit</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 EVERNE. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

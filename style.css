@@ -1,0 +1,505 @@
+/* ==================================================
+   CSS Variables (Color Palette & Base Settings)
+================================================== */
+:root {
+  /* Colors */
+  --color-bg: #ffffff;
+  --color-text: #4e4e4e;
+  --color-accent: #efdbdb;
+  --color-accent-hover: #424040;
+  --color-brand: #747474;
+  --color-overlay: rgba(203, 203, 203, 0.3);
+
+  /* Fonts */
+  --font-logo: 'Yeseva One', serif;
+  --font-head: 'DM Serif Display', serif;
+  --font-subhead: 'Montserrat', sans-serif;
+  --font-body: 'Source Serif 4', serif;
+
+  /* Layout */
+  --max-width: 1200px;
+  --container-pad: 20px;
+
+  /* Typography */
+  --h1-size: 3em;
+  --h2-size: 1.75em;
+  --h3-size: 1.25em;
+  --body-size: 1em;
+  --line-height: 1.6;
+
+  /* Effects */
+  --transition: 0.4s ease;
+  --fade-duration: 0.8s;
+}
+
+/* ==================================================
+   Base & Reset
+================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-body);
+  font-size: 100%;
+  scroll-behavior: smooth;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+body {
+  line-height: var(--line-height);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+}
+
+a {
+  color: var(--color-brand);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+a:hover,
+a:focus {
+  color: var(--color-accent-hover);
+}
+
+button,
+.btn {
+  cursor: pointer;
+  font-family: var(--font-subhead);
+  transition: background var(--transition), transform var(--transition);
+}
+
+/* ==================================================
+   Preloader
+================================================== */
+#preloader {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  background-color: #f9d3e0;
+}
+
+#preloader.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#preloader img {
+  max-width: 60%;
+  height: auto;
+}
+
+/* ==================================================
+   Header & Navigation
+================================================== */
+header {
+  background: var(--color-accent);
+  padding: 1.5em 0;
+  position: relative;
+  z-index: 10;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: var(--font-logo);
+  font-size: var(--h1-size);
+  color: var(--color-text);
+}
+
+nav ul {
+  display: flex;
+  gap: 1.5em;
+  list-style: none;
+  padding-left: 0;
+}
+
+nav li {
+  margin: 0 1em;
+}
+
+nav a {
+  font-family: var(--font-subhead);
+  font-size: 1em;
+  position: relative;
+}
+
+nav a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -0.25em;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--color-accent-hover);
+}
+
+#menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  #menu-toggle {
+    display: block;
+  }
+  nav ul {
+    display: none;
+    flex-direction: column;
+  }
+  nav ul.active {
+    display: flex;
+  }
+}
+
+/* ==================================================
+   Instagram Button
+================================================== */
+.instagram-btn {
+  position: fixed;
+  top: 30vh;
+  left: 1em;
+  width: 3em;
+  height: 3em;
+  background: var(--color-bg);
+  border: 1px solid var(--color-text);
+  border-radius: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text);
+  z-index: 20;
+}
+
+.instagram-btn:hover {
+  border-color: var(--color-accent-hover);
+  color: var(--color-accent-hover);
+}
+
+/* ==================================================
+   Hero Section
+================================================== */
+.hero {
+  position: relative;
+  background: url('hero-image.jpg') center/cover no-repeat;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--color-overlay);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+
+.hero-content h2 {
+  font-family: var(--font-head);
+  font-size: var(--h2-size);
+  max-width: 80%;
+  margin: 0 auto;
+  line-height: 1.2;
+}
+
+/* ==================================================
+   Showcase Section
+================================================== */
+#showcase {
+  position: relative;
+  overflow: hidden;
+  background: #fafafa;
+  padding: 2em 0;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.showcase-container {
+  position: relative;
+  width: 100%;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.6s ease;
+}
+
+.slide {
+  min-width: 100%;
+  position: relative;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.slide::before {
+  content: attr(data-label);
+  position: absolute;
+  top: 50%;
+  left: -2em;
+  transform: translateY(-50%) rotate(-90deg);
+  transform-origin: left top;
+  font-family: var(--font-subhead);
+  letter-spacing: 0.2em;
+  font-size: 0.9em;
+  color: var(--color-brand);
+  white-space: nowrap;
+}
+
+.dots {
+  position: absolute;
+  bottom: 1em;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5em;
+  z-index: 10;
+}
+
+.dots button {
+  width: 0.75em;
+  height: 0.75em;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0,0,0,0.2);
+}
+
+.dots button.active {
+  background: var(--color-accent-hover);
+}
+
+/* ==================================================
+   Sections & Content Boxes
+================================================== */
+section {
+  padding: 4em 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--fade-duration) ease, transform var(--fade-duration) ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.content-box {
+  background: var(--color-bg);
+  padding: 2.5em;
+  border-radius: 1em;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+section h2 {
+  font-family: var(--font-head);
+  font-size: var(--h2-size);
+  margin-bottom: 1em;
+  color: var(--color-brand);
+}
+
+/* ==================================================
+   Contact Card
+================================================== */
+.contact-card {
+  position: absolute;
+  top: 3em;
+  right: 0;
+  width: 520px;
+  max-width: 90%;
+  max-height: 70vh;
+  padding: 2em;
+  background: var(--color-bg);
+  border-radius: 0.75em;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  display: none;
+  overflow-y: auto;
+  z-index: 15;
+}
+
+.contact-card.show {
+  display: block;
+}
+
+.close-btn {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  background: none;
+  border: none;
+  font-size: 1.25em;
+  cursor: pointer;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-top: 1.25em;
+}
+
+.copy-btn {
+  margin-left: auto;
+  background: var(--color-accent);
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  transition: background var(--transition);
+}
+
+.copy-btn:hover {
+  background: var(--color-accent-hover);
+}
+
+/* ==================================================
+   Gallery
+================================================== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1em;
+}
+
+.gallery-item img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  border-radius: 0.5em;
+  transition: transform var(--transition);
+}
+
+.gallery-item img:hover {
+  transform: scale(1.05);
+}
+
+/* ==================================================
+   Forms & Footer
+================================================== */
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.75em;
+  margin-top: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 0.5em;
+  font-family: var(--font-body);
+}
+
+form button {
+  margin-top: 1em;
+  width: auto;
+}
+
+footer {
+  background: var(--color-accent);
+  text-align: center;
+  padding: 2em 0;
+}
+
+footer p {
+  font-size: 0.9em;
+  color: var(--color-brand);
+}
+
+/* キャッチコピー用のボックス */
+#catchcopy {
+  background: #f5f5f5; /* ショーケースと色を合わせるか、好きな色 */
+  padding: 3em 1em;
+  text-align: center;
+}
+.catchcopy-box h2 {
+  font-family: var(--font-head);
+  font-size: var(--h2-size);
+  color: var(--color-brand);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.4;
+}
+
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  background: none;
+  border: 1px solid var(--color-text);
+  color: var(--color-text);
+  font-size: 1.5em;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+#prev {
+  left: 1em;
+}
+
+#next {
+  right: 1em;
+}
+
+.slide-btn:hover {
+  background: var(--color-accent-hover);
+  color: #ffffff;
+  border-color: var(--color-accent-hover);
+}
+
+/* ==================================================
+   流れるテキスト（Ticker）
+================================================== */
+#ticker {
+  background: var(#ccc);
+  overflow: hidden;
+  height: 0px;
+}
+
+.ticker {
+  white-space: nowrap;
+}
+
+.ticker p {
+  display: inline-block;
+  padding-left: 100%;           /* 右から出てくるように */
+  font-family: var(--font-subhead);
+  font-size: 1.1em;
+  color: var(--color-text);
+  line-height: 2.5em;            /* セクション高さに合わせる */
+  animation: marquee 40s linear infinite;
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}

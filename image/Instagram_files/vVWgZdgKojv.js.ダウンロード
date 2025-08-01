@@ -1,0 +1,4 @@
+;/*FB_PKG_DELIM*/
+
+__d("PolarisLoggedOutAYMLFollowFromSharerQuery_instagramRelayOperation",[],(function(a,b,c,d,e,f){e.exports="9575100705907448"}),null);
+__d("PolarisLoggedOutAYMLFollowFromSharerQuery$Parameters",["PolarisLoggedOutAYMLFollowFromSharerQuery_instagramRelayOperation"],(function(a,b,c,d,e,f){"use strict";a={kind:"PreloadableConcreteRequest",params:{id:b("PolarisLoggedOutAYMLFollowFromSharerQuery_instagramRelayOperation"),metadata:{is_distillery:!0,root_field_name:["xdt_friendships_following_logged_out"]},name:"PolarisLoggedOutAYMLFollowFromSharerQuery",operationKind:"query",text:null}};e.exports=a}),null);
