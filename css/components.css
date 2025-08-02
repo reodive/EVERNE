@@ -19,7 +19,12 @@
   color: var(--color-accent-hover);
 }
 
-/* === Slide Buttons === */
+.showcase-wrapper {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
 .slide-btn {
   position: absolute;
   top: 50%;
@@ -43,9 +48,13 @@
   color: #fff;
   border-color: var(--color-accent-hover);
 }
-#prev { left: 1em; }
-#next { right: 1em; }
+.slide-btn.left {
+  left: -3rem;
+}
 
+.slide-btn.right {
+  right: -3rem;
+}
 /* === Contact Card === */
 .contact-card {
   position: absolute;
@@ -89,8 +98,4 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
-}
-#showcase {
-  max-height: 90vh;
-  overflow: hidden;
 }

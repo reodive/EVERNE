@@ -26,26 +26,29 @@ section h2 {
   overflow: hidden;
 }
 .slide img {
-  width: 100%;
+  height: auto;
   max-width: 500px;
   height: auto;
   margin: 0 auto;
   display: block;
-  height: 100%;
-  object-fit: cover;
+  object-fit: cover;       /* 画面サイズの80%まで */
+  width: 600px;           /* 通常は600pxに固定（目安） */
+  height: auto;
 }
 .slide::before {
   content: attr(data-label);
   position: absolute;
   top: 50%;
-  left: -2em;
-  transform: translateY(-50%) rotate(-90deg);
+  left: 1rem;
+  transform: translateY(-50%);
+  writing-mode: vertical-rl;
+  text-align: center;
   font-family: var(--font-subhead);
   font-size: 0.9em;
   color: var(--color-brand);
   letter-spacing: 0.2em;
+  z-index: 10;
 }
-
 /* === Gallery === */
 .gallery {
   display: grid;
