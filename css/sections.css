@@ -22,10 +22,17 @@ section h2 {
 .slide {
   min-width: 100%;
   position: relative;
+  max-height: 60vh;
+  overflow: hidden;
 }
 .slide img {
   width: 100%;
+  max-width: 500px;
+  height: auto;
+  margin: 0 auto;
   display: block;
+  height: 100%;
+  object-fit: cover;
 }
 .slide::before {
   content: attr(data-label);
